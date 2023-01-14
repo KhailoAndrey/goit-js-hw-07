@@ -14,17 +14,13 @@ const createImageItem = ({ preview, original, description }) => {
 
 const arrImages = galleryItems.map(createImageItem).join("");
 galleryEls.insertAdjacentHTML("beforeend", arrImages);
-console.log(galleryEls);
+// console.log(galleryEls);
 
 galleryEls.addEventListener("click", (event) => {
   event.preventDefault();
-  gallery.on("show.simplelightbox");
+  gallery.on("show.Simplelightbox");
 });
 let gallery = new SimpleLightbox(".gallery a", {
-  // captions: true,
-  // captionSelector: "img",
-  captionType: "${event.target.alt}",
-  // captionsData: "title",
-  captionPosition: "bottom",
+  captionsData: "alt",
   captionDelay: 250,
 });
